@@ -1,7 +1,7 @@
 # Python Web Application
 
 ## Overview
-This Python web application displays the **current time in Moscow**, dynamically updating each time the page is refreshed. It is built using the Flask framework, which is ideal for small and efficient web applications.
+This Python web application displays the **current time in Moscow**, dynamically updating each time the page is refreshed. It is built using the Flask framework.
 
 ## Features
 - Displays the current Moscow time.
@@ -12,7 +12,7 @@ This Python web application displays the **current time in Moscow**, dynamically
 ### Prerequisites
 - **Python 3.7+** must be installed on your system. If not installed, use Homebrew:
   ```bash
-  brew install python
+  brew install python3
   ```
 
 ## Steps to Install and Run
@@ -60,4 +60,5 @@ This project includes a .gitignore file to prevent unnecessary files from being 
 ## Author
 
 Alyona Maksimova
+
 Email: a.maksimova@innopolis.university
