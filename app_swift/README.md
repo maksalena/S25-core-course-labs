@@ -32,9 +32,7 @@ Ensure you have the following installed on your machine:
 2. Install the dependencies using Vapor:
 
    ```bash
-
 vapor update
-
    ```
    
 3. Build and run the project:
