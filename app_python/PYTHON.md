@@ -1,5 +1,3 @@
-# Framework Choice and Best Practices
-
 ## Framework Choice: Flask
 For this web application, I chose **Flask** as the framework. Below are the reasons for selecting Flask:
 - **Lightweight:** Flask is minimalistic and perfect for small-scale web applications.
