@@ -32,12 +32,13 @@ Ensure you have the following installed on your machine:
 2. Install the dependencies using Vapor:
 
    ```bash
-vapor update
+   vapor update
    ```
    
 3. Build and run the project:
+   
    ```bash
-vapor run serve
+   vapor run serve
    ```
 
 4. Open a browser and visit <http://localhost:8080> to see the current Moscow time.
