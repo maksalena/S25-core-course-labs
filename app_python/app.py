@@ -24,5 +24,4 @@ def moscow_time():
 
 # Run the Flask development server if this script is executed directly
 if __name__ == "__main__":
-    # Start the server in debug mode for easier development
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
