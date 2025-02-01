@@ -42,3 +42,22 @@ I ensured the application functions correctly through the following testing step
    - Tested the application on Chrome, Firefox, and Safari.
 3. **Code Quality:**
    - Used clear, concise code and avoided redundant logic.
+  
+## Unit Testing in Python Project
+
+### Best Practices for Unit Testing
+
+- **Use a Test Client:** Flask provides a built-in test client to simulate requests.
+- **Isolated Tests:** Each test runs independently with a fresh app instance.
+- **Assertions:** Use assertions to check expected results.
+- **Automated Execution:** Tests are automated using `unittest` and integrated into CI.
+
+### Unit Tests Implemented
+
+1. **Test `/` route response**:
+   - Ensures the Moscow time page loads successfully.
+   - Validates status code `200 OK`.
+
+2. **Test `/` route content**:
+   - Confirms the page contains the correct "Current Moscow Time:" text.
+   - Ensures the response includes valid HTML.
