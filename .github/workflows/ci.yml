@@ -81,6 +81,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install --no-cache-dir -r requirements.txt
 
+      - name: Install Snyk CLI
+        run: |
+          npm install -g snyk
+
       - name: Run Snyk Security Scan
         continue-on-error: true
         working-directory: ./app_python
