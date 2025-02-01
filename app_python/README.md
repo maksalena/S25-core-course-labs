@@ -1,5 +1,7 @@
 # Python Web Application
 
+![CI Status](https://github.com/your_username/your_repo/actions/workflows/ci.yml/badge.svg)
+
 ## Overview
 
 This Python web application displays the **current time in Moscow**, dynamically updating each time the page is refreshed. It is built using the Flask framework.
@@ -108,6 +110,31 @@ Prerequisites:
      ```
 
 - Open your browser and visit: `http://127.0.0.1:8080`
+
+## Unit Tests
+
+1. **Test `/` route response**:
+   - Ensures the Moscow time page loads successfully.
+   - Validates status code `200 OK`.
+
+2. **Test `/` route content**:
+   - Confirms the page contains the correct "Current Moscow Time:" text.
+   - Ensures the response includes valid HTML.
+
+### Running Tests Locally
+
+```bash
+python -m unittest discover tests/
+```
+
+### GitHub Actions Workflow
+
+This project uses GitHub Actions for Continuous Integration (CI). The CI process:
+
+- Installs dependencies
+- Runs a linter (flake8)
+- Runs unit tests
+- Logs in to Docker Hub, builds the image, and pushes it
 
 ## Author
 
