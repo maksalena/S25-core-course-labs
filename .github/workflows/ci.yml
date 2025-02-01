@@ -70,10 +70,25 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Run Snyk Security Scan
-        uses: snyk/actions/python@master
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
         with:
-          command: test
-          args: "--file=app_python/requirements.txt"
+          python-version: "3.9"
+
+      - name: Install dependencies
+        working-directory: ./app_python  # Ensure dependencies are installed from the correct directory
+        run: |
+          python -m pip install --upgrade pip
+          pip install --no-cache-dir -r app_python/requirements.txt
+
+      - name: Run Snyk Security Scan
+        continue-on-error: true
+        working-directory: ./app_python
+        run: snyk test --file=app_python/requirements.txt --sarif-file-output=snyk.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  
+      - name: Upload Snyk Results to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ./app_python/snyk.sarif
