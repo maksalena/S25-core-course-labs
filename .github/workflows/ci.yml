@@ -84,7 +84,7 @@ jobs:
       - name: Run Snyk Security Scan
         continue-on-error: true
         working-directory: ./app_python
-        run: snyk test --file=requirements.txt --sarif-file-output=snyk.sarif
+        run: snyk test --sarif-file-output=snyk.sarif
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   
