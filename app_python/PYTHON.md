@@ -45,6 +45,12 @@ I ensured the application functions correctly through the following testing step
   
 ## Unit Testing in Python Project
 
+### Running Tests Locally
+
+```bash
+python -m unittest discover tests/
+```
+
 ### Best Practices for Unit Testing
 
 - **Use a Test Client:** Flask provides a built-in test client to simulate requests.
