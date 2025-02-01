@@ -1,6 +1,7 @@
 # Python Web Application
 
-![CI Status](https://github.com/maksalena/S25-core-course-labs/actions/workflows/ci.yml/badge.svg)
+[![CI Status](https://github.com/maksalena/S25-core-course-labs/actions/workflows/ci.yml/badge.svg)](https://github.com/maksalena/S25-core-course-labs/actions/workflows/ci.yml)
+
 
 ## Overview
 
