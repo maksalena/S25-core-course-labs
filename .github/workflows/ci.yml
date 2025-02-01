@@ -72,5 +72,7 @@ jobs:
 
       - name: Run Snyk Security Scan
         uses: snyk/actions/python@master
+        with:
+          working-directory: app_python
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
