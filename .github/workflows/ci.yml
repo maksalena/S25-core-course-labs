@@ -91,4 +91,4 @@ jobs:
       - name: Upload Snyk Results to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: ./app_python/snyk.sarif
+          sarif_file: snyk.sarif
