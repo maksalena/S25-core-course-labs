@@ -27,16 +27,16 @@ terraform state show docker_container.nginx
 # docker_container.nginx:
 resource "docker_container" "nginx" {
     attach                                      = false
-    bridge                                      = [90mnull[0m[0m
+    bridge                                      = [90mnull[0m[0m
     command                                     = [
         "nginx",
         "-g",
         "daemon off;",
     ]
     container_read_refresh_timeout_milliseconds = 15000
-    cpu_set                                     = [90mnull[0m[0m
+    cpu_set                                     = [90mnull[0m[0m
     cpu_shares                                  = 0
-    domainname                                  = [90mnull[0m[0m
+    domainname                                  = [90mnull[0m[0m
     entrypoint                                  = [
         "/docker-entrypoint.sh",
     ]
@@ -56,17 +56,17 @@ resource "docker_container" "nginx" {
     network_data                                = [
         {
             gateway                   = "172.17.0.1"
-            global_ipv6_address       = [90mnull[0m[0m
+            global_ipv6_address       = [90mnull[0m[0m
             global_ipv6_prefix_length = 0
             ip_address                = "172.17.0.2"
             ip_prefix_length          = 16
-            ipv6_gateway              = [90mnull[0m[0m
+            ipv6_gateway              = [90mnull[0m[0m
             mac_address               = "02:42:ac:11:00:02"
             network_name              = "bridge"
         },
     ]
     network_mode                                = "bridge"
-    pid_mode                                    = [90mnull[0m[0m
+    pid_mode                                    = [90mnull[0m[0m
     privileged                                  = false
     publish_all_ports                           = false
     read_only                                   = false
@@ -81,11 +81,11 @@ resource "docker_container" "nginx" {
     stop_signal                                 = "SIGQUIT"
     stop_timeout                                = 0
     tty                                         = false
-    user                                        = [90mnull[0m[0m
-    userns_mode                                 = [90mnull[0m[0m
+    user                                        = [90mnull[0m[0m
+    userns_mode                                 = [90mnull[0m[0m
     wait                                        = false
     wait_timeout                                = 60
-    working_dir                                 = [90mnull[0m[0m
+    working_dir                                 = [90mnull[0m[0m
 
     ports {
         external = 8080
