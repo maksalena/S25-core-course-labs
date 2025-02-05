@@ -107,21 +107,19 @@ image_id = "sha256:0a399eb16751829e1af26fea27b20c3ec28d7ab1fb72182879dcae1cca212
 
 ## YandexCloud
 
-### Init terraform
+1. Init terraform
 
 ```shell
 terraform init -backend-config="access_key=$ACCESS_KEY"-backend-config="secret_key=$SECRET_KEY"
 ```
 
-### Apply terraform
+2. Apply terraform
 
 ```shell
 terraform apply -var="cloud_id=$YC_CLOUD_ID" -var="folder_id=$YC_CATALOG_ID" -var="service_account_key_file=$YC_KEY_PATH"
 ```
 
-### terraform state list
-
-Output:
+3. terraform state list
 
 ```shell
 yandex_compute_image.ubuntu_2004
@@ -130,9 +128,7 @@ yandex_vpc_network.network-1
 yandex_vpc_subnet.subnet-1
 ```
 
-### terraform show
-
-Output:
+4. terraform show
 
 ```shell
 # yandex_compute_image.ubuntu_2004:
@@ -246,9 +242,7 @@ resource "yandex_vpc_subnet" "subnet-1" {
 }
 ```
 
-### terraform output
-
-Output:
+5. terraform output
 
 ```shell
 external_ip_address_vm_1 = "158.160.60.155"
