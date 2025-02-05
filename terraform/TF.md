@@ -1,3 +1,13 @@
+# Terraform
+
+## Terraform best practices
+
+* Separate terraform files by their responsibility: providers, variables, network, outputs, etc.
+* Split files by scopes of work (GitHub, Cloud, Docker)
+* Preserve one variable naming style (e.g. snake_case)
+* Use `terraform fmt` to keep configs consistent
+* Use `terraform validate` to keep configs correct
+
 ## Docker
 
 ### Terraform state list
@@ -87,9 +97,43 @@ resource "docker_container" "nginx" {
 ```
 
 ### Terraform outputs
+
 ```shell
 terraform output
                            
 container_id = "5a783323a6241eb1aba9915ec17102d364493fb3a949af1cbffd33d69753b410"
 image_id = "sha256:0a399eb16751829e1af26fea27b20c3ec28d7ab1fb72182879dcae1cca21206anginx:latest"
 ```
+
+## GitHub
+
+### Terraform import
+
+```shell
+terraform import "github_repository.terraform" "devops-terraform"
+
+var.github_token
+  Specifies the GitHub PAT token or `GITHUB_TOKEN`
+
+  Enter a value: 
+
+github_repository.terraform: Importing from ID "S25-core-course-labs"...
+github_repository.terraform: Import prepared!
+  Prepared github_repository for import
+github_repository.terraform: Refreshing state... [id=S25-core-course-labs]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+```
+
+### Outputs
+
+```shell
+terraform state show github_repository.terraform
+terraform state list
+terraform output
+```
+
+These outputs will give you details about infrastructure and applied changes.
