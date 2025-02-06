@@ -255,7 +255,7 @@ internal_ip_address_vm_1 = "192.168.10.33"
 ### Terraform import
 
 ```shell
-terraform import "github_repository.terraform" "devops-terraform"
+terraform import github_repository.terraform "S25-core-course-labs"
 
 var.github_token
   Specifies the GitHub PAT token or `GITHUB_TOKEN`
