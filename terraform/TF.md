@@ -154,7 +154,7 @@ resource "yandex_compute_instance" "vm-1" {
     id                        = "fhmcm18frvk6i0dhpd5g"
     metadata                  = {
         "ssh-keys" = <<-EOT
-            ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBg7zb98jwHYj0WUX13c9mYdzNqf5GWAjypJxwvak4S3 maksalena@maksalena-2.local
+            ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBg7zb98jwHYj0WUX13c9mYdzNqf5GWAjypJxwvak4S3 maksalena04@mail.ru
         EOT
     }
     name                      = "terraform1"
