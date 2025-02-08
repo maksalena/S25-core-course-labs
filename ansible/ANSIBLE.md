@@ -1,4 +1,4 @@
-# Ansible Guide for Efficient Automation
+# Ansible
 
 ## Best Practices for Using Ansible Effectively
 
