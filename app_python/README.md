@@ -11,6 +11,7 @@ This Python web application displays the **current time in Moscow**, dynamically
 
 - Displays the current Moscow time.
 - Updates dynamically when refreshed.
+- Visits counting logic.
 
 ## Installation
 

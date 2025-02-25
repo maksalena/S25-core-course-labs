@@ -13,6 +13,8 @@ COPY app.py requirements.txt /app/
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN mkdir -p data && chown myuser data && chmod -R 0777 data
+
 # Expose only the required port
 EXPOSE 8080
 
