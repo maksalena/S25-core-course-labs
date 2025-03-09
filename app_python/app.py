@@ -4,7 +4,6 @@ from datetime import datetime
 
 import pytz
 from flask import Flask
-from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
 # Create a Flask application instance
