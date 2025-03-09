@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Define global variables
 counter_lock = asyncio.Lock()
 visits_file_path = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)), "../../data/visits.txt"
+    os.path.dirname(os.path.realpath(__file__)), "../data/visits.txt"
 )
 
 # Ensure the visits file exists
