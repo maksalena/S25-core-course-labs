@@ -3,8 +3,7 @@ import asyncio
 from datetime import datetime
 
 import pytz
-from flask import Flask
-from fastapi.responses import JSONResponse
+from flask import Flask, jsonify
 
 # Create a Flask application instance
 app = Flask(__name__)
@@ -40,7 +39,7 @@ async def moscow_time():
     return f"<h1>Current Moscow Time: {current_time}</h1>"
 
 
-@app.get("/visits")
+@app.route("/visits")
 async def get_visits():
     try:
         with open(visits_file_path, "r") as f:
@@ -52,7 +51,7 @@ async def get_visits():
     except IOError:
         visits = 0
 
-    return JSONResponse(content={"visits": visits}, status_code=200)
+    return jsonify(visits=visits)
 
 
 async def add_visit():
