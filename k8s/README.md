@@ -65,7 +65,7 @@ Instead of creating resources imperatively, define them in YAML files and apply 
 Apply deployment and service configurations from YAML files:
 
 ```shell
-kubectl apply -f app_python/deployment.yaml
+kubectl apply -f app_python/statefulset.yaml
 deployment.apps/python-deployment created
 kubectl apply -f app_python/service.yaml
 service/python-service created
