@@ -38,7 +38,7 @@ securityContext: { }
   #   drop:
   #   - ALL
   # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
+# runAsNonRoot: true
 # runAsUser: 1000
 
 service:
@@ -49,7 +49,7 @@ ingress:
   enabled: true
   className: ""
   annotations: { }
-    # kubernetes.io/ingress.class: nginx
+  # kubernetes.io/ingress.class: nginx
   # kubernetes.io/tls-acme: "true"
   hosts:
     - host: python.app
@@ -61,7 +61,13 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: { }
+resources:
+  limits:
+    cpu: 1
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 30Mi
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -70,8 +76,28 @@ resources: { }
   #   cpu: 100m
   #   memory: 128Mi
   # requests:
-  #   cpu: 100m
+#   cpu: 100m
 #   memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
+
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 3
+  successThreshold: 1
 
 autoscaling:
   enabled: false
@@ -87,13 +113,25 @@ volumes:
     configMap:
       name: python-app-configmap
 
+  - name: visits-data
+      emptyDir:
+        sizeLimit: 500Mi
+
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
   - name: config-volume
     mountPath: /app/config_map
+
+  - name: visits-data
+      mountPath: /app/data
 
 nodeSelector: { }
 
 tolerations: [ ]
 
 affinity: { }
+
+vct:
+   name: visits-data
+   storageName: python-storage
+   storage: 1Gi
